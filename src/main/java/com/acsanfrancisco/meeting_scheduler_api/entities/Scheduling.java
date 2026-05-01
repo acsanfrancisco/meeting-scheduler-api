@@ -1,6 +1,6 @@
 package com.acsanfrancisco.meeting_scheduler_api.entities;
 
-import com.acsanfrancisco.meeting_scheduler_api.entities.enums.SchedulerStatusEnum;
+import com.acsanfrancisco.meeting_scheduler_api.entities.enums.SchedulingStatusEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class Scheduler {
+@Table(name = "scheduling")
+public class Scheduling {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,12 +31,12 @@ public class Scheduler {
     private LocalDateTime meetingDate;
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
-    private SchedulerStatusEnum status;
+    private SchedulingStatusEnum status;
 
     @PrePersist
     public void prePersist(){
         if(this.status == null){
-            this.status = SchedulerStatusEnum.SCHEDULED;
+            this.status = SchedulingStatusEnum.SCHEDULED;
         }
         if(this.createdAt == null){
             this.createdAt = LocalDateTime.now();

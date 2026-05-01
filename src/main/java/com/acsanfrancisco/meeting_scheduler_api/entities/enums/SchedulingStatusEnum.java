@@ -1,6 +1,6 @@
 package com.acsanfrancisco.meeting_scheduler_api.entities.enums;
 
-public enum SchedulerStatusEnum {
+public enum SchedulingStatusEnum {
 
     SCHEDULED,
     SENT,

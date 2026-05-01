@@ -1,5 +1,6 @@
 package com.acsanfrancisco.meeting_scheduler_api.dtos;
 
+import com.acsanfrancisco.meeting_scheduler_api.entities.enums.SchedulingStatusEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class SchedulerOut {
+public class SchedulingOut {
 
     private Long id;
     private String receiverEmail;
@@ -21,5 +22,5 @@ public class SchedulerOut {
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime meetingDate;
-    private String status;
+    private SchedulingStatusEnum status;
 }

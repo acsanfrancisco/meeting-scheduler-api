@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class SchedulerIn {
+public class SchedulingIn {
 
     @NotBlank(message = "Must inform the receiver email")
     @Email(message = "Must inform a valid email")
