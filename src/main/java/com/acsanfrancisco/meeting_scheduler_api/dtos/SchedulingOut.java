@@ -2,6 +2,7 @@ package com.acsanfrancisco.meeting_scheduler_api.dtos;
 
 import com.acsanfrancisco.meeting_scheduler_api.entities.enums.SchedulingStatusEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,4 +24,8 @@ public class SchedulingOut {
     @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime meetingDate;
     private SchedulingStatusEnum status;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+    private LocalDateTime modifiedAt;
 }

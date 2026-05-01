@@ -22,7 +22,13 @@ public class SchedulingController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<SchedulingOut> findById (@Valid @PathVariable Long id){
+    public ResponseEntity<SchedulingOut> findById (@PathVariable Long id){
         return ResponseEntity.status(HttpStatus.OK).body(service.findById(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> cancel(@PathVariable Long id){
+        service.cancel(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

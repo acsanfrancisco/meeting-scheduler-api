@@ -32,6 +32,8 @@ public class Scheduling {
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
     private SchedulingStatusEnum status;
+    @Column(name = "modified_At")
+    private LocalDateTime modifiedAt;
 
     @PrePersist
     public void prePersist(){
