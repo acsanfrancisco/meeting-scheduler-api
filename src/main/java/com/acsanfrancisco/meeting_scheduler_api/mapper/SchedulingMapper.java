@@ -2,6 +2,7 @@ package com.acsanfrancisco.meeting_scheduler_api.mapper;
 
 import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingIn;
 import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingOut;
+import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingUpdate;
 import com.acsanfrancisco.meeting_scheduler_api.entities.Scheduling;
 
 public class SchedulingMapper {
@@ -25,4 +26,5 @@ public class SchedulingMapper {
         schedulingOut.setStatus(scheduling.getStatus());
         return schedulingOut;
     }
+
 }

@@ -2,9 +2,11 @@ package com.acsanfrancisco.meeting_scheduler_api.controller;
 
 import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingIn;
 import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingOut;
+import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingUpdate;
 import com.acsanfrancisco.meeting_scheduler_api.services.SchedulingService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +32,10 @@ public class SchedulingController {
     public ResponseEntity<Void> cancel(@PathVariable Long id){
         service.cancel(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<SchedulingOut> updateById(@Valid @RequestBody SchedulingUpdate dto, @PathVariable Long id){
+        return ResponseEntity.status(HttpStatus.OK).body(service.update(dto, id));
     }
 }

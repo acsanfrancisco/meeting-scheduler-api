@@ -2,6 +2,7 @@ package com.acsanfrancisco.meeting_scheduler_api.services;
 
 import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingIn;
 import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingOut;
+import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingUpdate;
 import com.acsanfrancisco.meeting_scheduler_api.entities.Scheduling;
 import com.acsanfrancisco.meeting_scheduler_api.entities.enums.SchedulingStatusEnum;
 import com.acsanfrancisco.meeting_scheduler_api.exception.SchedulingNotFoundException;
@@ -37,5 +38,17 @@ public class SchedulingService {
                 .orElseThrow(()->new SchedulingNotFoundException("Scheduling not found. ID = " +  id));
         scheduling.setStatus(SchedulingStatusEnum.CANCELED);
         scheduling.setModifiedAt(LocalDateTime.now());
+    }
+
+    @Transactional
+    public SchedulingOut update(SchedulingUpdate dto, Long id){
+        Scheduling scheduling = repository.findById(id)
+                .orElseThrow(()-> new SchedulingNotFoundException("Scheduling not found. ID = " +  id));
+        scheduling.setReceiverEmail(dto.getReceiverEmail());
+        scheduling.setReceiverTelephone(dto.getReceiverTelephone());
+        scheduling.setMessage(dto.getMessage());
+        scheduling.setMeetingDate(dto.getMeetingDate());
+        scheduling.setModifiedAt(LocalDateTime.now());
+        return SchedulingMapper.toDto(repository.save(scheduling));
     }
 }
