@@ -2,8 +2,6 @@
 
 ![Java](https://img.shields.io/badge/Java-17+-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
-![Status](https://img.shields.io/badge/status-ativo-success)
-![Licença](https://img.shields.io/badge/license-MIT-blue)
 
 API REST para gerenciamento de agendamentos de reuniões e mensagens.  
 Desenvolvida com Spring Boot, seguindo boas práticas como arquitetura em camadas, uso de DTOs, tratamento global de exceções e validações.
@@ -60,15 +58,14 @@ O projeto segue uma arquitetura em camadas:
 
 ## 📌 Diagrama simplificado da entidade
 Scheduling:
--id
--receiver_email
--receiver_telephone
--message
--meeting_date
--status
--created_at
--modified_at
-
+- id
+- receiver_email
+- receiver_telephone
+- message
+- meeting_date
+- status
+- created_at
+- modified_at
 
 ---
 
