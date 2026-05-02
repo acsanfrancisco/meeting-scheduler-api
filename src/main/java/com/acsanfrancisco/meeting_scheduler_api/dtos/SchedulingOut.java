@@ -27,5 +27,9 @@ public class SchedulingOut {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+    private LocalDateTime createdAt;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime modifiedAt;
 }

@@ -2,7 +2,6 @@ package com.acsanfrancisco.meeting_scheduler_api.mapper;
 
 import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingIn;
 import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingOut;
-import com.acsanfrancisco.meeting_scheduler_api.dtos.SchedulingUpdate;
 import com.acsanfrancisco.meeting_scheduler_api.entities.Scheduling;
 
 public class SchedulingMapper {
@@ -24,6 +23,8 @@ public class SchedulingMapper {
         schedulingOut.setReceiverTelephone(scheduling.getReceiverTelephone());
         schedulingOut.setMeetingDate(scheduling.getMeetingDate());
         schedulingOut.setStatus(scheduling.getStatus());
+        schedulingOut.setCreatedAt(scheduling.getCreatedAt());
+        schedulingOut.setModifiedAt(scheduling.getModifiedAt());
         return schedulingOut;
     }
 
