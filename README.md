@@ -22,17 +22,14 @@ DELETE /api/v1/schedulings/{id}
 
 ## 📥 Exemplo de requisição (CREATE / UPDATE)
 
+```json
 {
   "receiverEmail": "usuario@email.com",
   "receiverTelephone": "11999999999",
   "message": "Confirmação de reunião",
   "meetingDate": "25/12/2026 14:00"
 }
-
----
-
-## 📤 Exemplo de resposta
-
+📤 Exemplo de resposta
 {
   "id": 1,
   "receiverEmail": "usuario@email.com",
@@ -43,13 +40,8 @@ DELETE /api/v1/schedulings/{id}
   "createdAt": "25/12/2026 10:00",
   "modifiedAt": null
 }
-
----
-
-## ⚠️ Tratamento de erros
-
-### Erro padrão
-
+⚠️ Tratamento de erros
+❌ Erro padrão
 {
   "path": "/api/v1/schedulings/1",
   "method": "GET",
@@ -58,11 +50,7 @@ DELETE /api/v1/schedulings/{id}
   "message": "Agendamento não encontrado. ID = 1",
   "errors": null
 }
-
----
-
-### Erros de validação
-
+❌ Erros de validação
 {
   "message": "Um ou mais campos são inválidos",
   "errors": {
@@ -70,27 +58,13 @@ DELETE /api/v1/schedulings/{id}
   }
 }
 
----
+📚 Swagger
+http://localhost:8080/swagger-ui.html
 
-## 📚 Swagger
+▶️ Como executar o projeto
+- git clone https://github.com/acsanfrancisco/meeting-scheduler-api
+- mvn clean install
+- mvn spring-boot:run
 
-http://localhost:8080/swagger-ui.html  
-
----
-
-## ▶️ Como executar o projeto
-
-1. Clonar o repositório  
-git clone https://github.com/acsanfrancisco/meeting-scheduler-api  
-
-2. Compilar o projeto  
-mvn clean install  
-
-3. Executar a aplicação  
-mvn spring-boot:run  
-
----
-
-## 👨‍💻 Autor
-
+👨‍💻 Autor
 Desenvolvido por João Francisco
