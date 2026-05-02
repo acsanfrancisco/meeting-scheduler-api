@@ -60,14 +60,14 @@ O projeto segue uma arquitetura em camadas:
 
 ## 📌 Diagrama simplificado da entidade
 Scheduling:
-id
-receiver_email
-receiver_telephone
-message
-meeting_date
-status
-created_at
-modified_at
+-id
+-receiver_email
+-receiver_telephone
+-message
+-meeting_date
+-status
+-created_at
+-modified_at
 
 
 ---
